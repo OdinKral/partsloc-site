@@ -1,7 +1,7 @@
 # PartsLoc public site
 
 Static site for GitHub Pages, no scripts, no web fonts, no external requests (Bryan pays per
-GB; a page that calls out would break that rule).
+GB; a page that calls out would break that rule). One exception: a plain link to the Ko-fi tip page (`store/tests/test_site_external_refs.py` allows exactly that one URL).
 
 - `index.html` product page (hero, problems, walkthrough, features, privacy, FAQ). Hand-written.
 - `privacy.html` GENERATED from `docs/privacy-policy.md` by `store/build-pages.py`

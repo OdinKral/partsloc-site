@@ -56,10 +56,15 @@ No. There is no sign-up and no login. You can type your name in Settings so the 
 Not live, and there is no server. In this first version, one phone sends a small file with its changes (through the phone's share menu), the other phone shows what would change, and you apply it. Each movement is applied once, and if two phones disagree it shows you both numbers. Photos do not travel in that file; they stay on the phone that took them.
 
 **Can I get my data out, or back it up?**
-Yes. Export your parts to a CSV spreadsheet, or make a backup file and share it anywhere. If your phone's Android backup is on, Android may also copy your parts and photos to your Google account so they survive a new phone; that copy is made by Android and Google, and you control it in your phone's settings. The app's own settings (your name, theme) are not part of it.
+Yes. Export your parts to a CSV spreadsheet, or make a backup file and either share it or save it to a folder on the phone (no email or internet needed). If your phone's Android backup is on, Android may also copy your parts and photos to your Google account so they survive a new phone; that copy is made by Android and Google, and you control it in your phone's settings. The app's own settings (your name, theme) are not part of it.
+
+**Can I support PartsLoc?**
+If you like this project, please support it: ☕ [ko-fi.com/vanilabs](https://ko-fi.com/vanilabs). It is a tip jar on another website; the app itself stays free and never asks for money.
 
 **What phones does it run on?**
 Android only for now. There is no iPhone version.
 
 **When can I get it?**
 It is not on Google Play yet. This page will link to it when it is.
+
+If you like this project, please support it: ☕ [ko-fi.com/vanilabs](https://ko-fi.com/vanilabs)

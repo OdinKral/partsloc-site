@@ -9,7 +9,8 @@ This mirrors the app's importer (lib/services/csv_import.dart in the PartsLoc so
 Settings > Data > "Import parts from CSV"): same encoding fallback, same header matching, same
 number parsing, same "what counts as a usable row". Where the app only warns, this prints WARNING;
 where the app skips a row, ERROR; NOTE is something the app accepts silently but that usually
-surprises people. The app also shows its own preview before writing anything, so this is a
+surprises people. (Behaviour as of the 2026-11-04 importer: non-whole counts and in-file duplicates
+are row ERRORS, blank text cells leave existing values alone, photo_url is ignored.) The app also shows its own preview before writing anything, so this is a
 pre-flight check, not a replacement.
 
 Why the row numbers look the way they do: the app numbers rows the way its own preview does (header
@@ -37,6 +38,7 @@ ALIASES = {
     "shelf": "default_location", "discipline": "trade", "tradetype": "trade",
 }
 # The app reads these columns but does not apply them on import (see import-format.md).
+TEXT_COLS = ("category", "description", "supplier", "supplier_url", "default_location", "trade")
 IGNORED_ON_IMPORT = {"lifecycle_status", "last_updated"}
 
 
@@ -61,12 +63,17 @@ def parse_rows(text):
     return [r for r in rows if len(r) > 1 or (r and r[0].strip())]
 
 
+# Whole numbers as the app reads them (since 2026-11-04): "40", "-3", "1,200" (thousands
+# separators) and "40.0" (what a spreadsheet makes of a whole number). Everything else is a ROW
+# ERROR in the app, not a guess: "1.5", "a few", "12 pcs", and "1.200" (one point two or one
+# thousand two hundred? the app will not choose). The old rule (drop every non-digit, so "1.5"
+# became 15) was a silent 10x stock error; this must stay identical to csv_import.dart.
+WHOLE = re.compile(r"^-?(\d+|\d{1,3}(,\d{3})+)(\.0+)?$")
+
+
 def int_ok(raw):
-    """The app strips everything except digits and '-' then parses; None means 'not a number'."""
-    try:
-        return int(re.sub(r"[^0-9-]", "", raw))
-    except ValueError:
-        return None
+    """True if the app accepts this as a whole number."""
+    return bool(WHOLE.match(raw))
 
 
 def float_ok(raw):
@@ -108,7 +115,7 @@ def check(raw_bytes):
     for c in IGNORED_ON_IMPORT & set(seen):
         notes.append(f"column '{c}' is accepted but not applied by the import.")
 
-    keys, names = {}, {}
+    idents, photo_rows, blank_cells = {}, 0, False
     for r in range(1, len(rows)):
         line, cells = r + 1, rows[r]
         v = {colmap[i]: cells[i].strip() for i in colmap if i < len(cells)}
@@ -118,26 +125,37 @@ def check(raw_bytes):
         if not name and not sku:
             errors.append(f"row {line}: no name and no part number; this row would be skipped.")
             continue
+        bad = False
         for col in ("count", "ideal_stock", "low_threshold"):
             raw = v.get(col, "")
-            if raw and int_ok(raw) is None:
-                warnings.append(f"row {line}: {col} '{raw}' is not a number; the app would use 0 (or keep the stored value).")
-            elif raw and re.search(r"[.,]\d", raw) and col != "unit_cost":
-                warnings.append(f"row {line}: {col} '{raw}' has a decimal or comma; the app drops non-digits and would read it as {int_ok(raw)}. Use whole numbers.")
+            if raw and not int_ok(raw):
+                errors.append(f"row {line}: {col} '{raw}' is not a whole number; the app skips this row.")
+                bad = True
+        if bad:
+            continue
         raw = v.get("unit_cost", "")
         if raw and float_ok(raw) is None:
             warnings.append(f"row {line}: unit_cost '{raw}' is not a number; the app would use 0.")
         if v.get("photo_url"):
-            notes.append(f"row {line}: photo_url is set; the app downloads that address itself when the part is opened. Leave it blank unless you trust it.")
-        key = (v.get("manufacturer", "").lower(), sku.lower()) if sku else None
-        lname = name.lower()
-        if (key and key in keys) or (lname and lname in names):
-            first = keys.get(key) or names.get(lname)
-            warnings.append(f"row {line}: same part as row {first}; the app does NOT merge rows within one file, so both would be created (a duplicate).")
-        if key:
-            keys.setdefault(key, line)
-        if lname:
-            names.setdefault(lname, line)
+            photo_rows += 1
+        for col in TEXT_COLS:
+            if col in seen and not v.get(col, ""):
+                blank_cells = True
+        # One part, one row: the later row is an ERROR in the app (the first is kept). Identity
+        # is (manufacturer, sku), else name, as in csv_import.dart. A typed id is not an identity (the
+        # app's own template repeats one placeholder id on every example row).
+        if sku:
+            ident = ("sku", v.get("manufacturer", "").lower(), sku.lower())
+        else:
+            ident = ("name", name.lower())
+        if ident in idents:
+            errors.append(f"row {line}: same part as row {idents[ident]} (duplicate); the app skips this row. Keep one of the two rows.")
+            continue
+        idents[ident] = line
+    if photo_rows:
+        warnings.append(f"photo_url ignored on {photo_rows} rows: the app does not download pictures from web addresses on import. Add photos in the app.")
+    if blank_cells:
+        notes.append("blank text cells on parts already in the app leave those fields unchanged (a spreadsheet cannot clear a text field).")
     if len(rows) == 1:
         errors.append("the file has a header row but no parts.")
     return errors, warnings, notes
