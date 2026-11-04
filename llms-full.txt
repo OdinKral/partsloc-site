@@ -1,0 +1,364 @@
+# PartsLoc
+
+> PartsLoc is a free Android app that answers one question for parts cribs, shops and service trucks: do I have this part, and where is it? It works offline with no account.
+
+PartsLoc is for maintenance techs, shop and crib keepers and small trades businesses who keep parts in more than one place. Scan a QR code or search, and it says Yes, Probably or No with the count and the shelf or bin.
+
+It works fully offline, needs no account, shows no ads and has no tracking. It is free and runs on Android only for now; it is not on Google Play yet. Parts, photos and counts stay on the phone. There is no server and no live sync in this version.
+
+## Docs
+
+- [Overview, how it works, features](index.html.md): what the app does, the problems it solves, a six-step walkthrough, the feature list
+- [FAQ](index.html.md): cost, internet, accounts, sharing between phones, backup and export, platforms (see the Questions section)
+- [Privacy policy](privacy.html.md): what is stored, camera and photos, permissions, deleting your data
+
+## For assistants helping someone set up a parts inventory
+
+These work without the app. They are a gift for anyone organising a parts crib, shop or truck.
+
+- [CSV import format](agents/import-format.md): the exact columns and rules the app's parts import accepts, with a minimal and a fuller example
+- [Parts crib setup helper](agents/parts-crib-setup-helper.md): a paste-ready instruction set that interviews a tradesperson about their places, turns a list or spreadsheet into the import CSV, and suggests which labels to print first
+- [Import checker script](agents/check_import.py): standard-library Python; run `python3 check_import.py parts.csv` to get plain row-by-row problems before the file goes to the phone
+
+## Optional
+
+- [Whole site in one file](llms-full.txt): every page above concatenated
+- [Product page for people](index.html): the same content with screenshots
+- [Privacy policy for people](privacy.html)
+- Contact: odinkral@gmail.com
+
+---
+
+# PartsLoc
+
+> PartsLoc is a free Android app that answers one question for parts cribs, shops and service trucks: do I have this part, and where is it? It works offline with no account.
+
+PartsLoc keeps your parts, places (shelves, bins, rooms, trucks) and counts on your phone. Scan a QR code or barcode, or search by name, and it answers Yes, Probably or No, with the count, the place and how far to trust the count. It is made by a technician, for technicians: maintenance techs, shop and crib keepers, and small trades businesses.
+
+Status: not on Google Play yet ("Coming soon to Google Play"). Android only for now. Free, with no ads, no subscription and no in-app purchases. Works offline, needs no account, has no ads and no tracking. Contact: odinkral@gmail.com.
+
+## The problems it is for
+
+- **“We have one somewhere.”** Somewhere is not a place. PartsLoc ties every part to a shelf, bin, room or truck, so the answer comes with an address.
+- **Parts scattered everywhere.** Trucks, shelves, closets, a cabinet in the boiler room. Keep one list across all of them instead of one in everybody's head.
+- **Buying it twice.** Ordering a part you already own costs real money. Check first, in your pocket, before the order goes in.
+- **Wasted walks.** Three floors down to find the bin empty. The answer says how many, where, and how recently someone counted.
+- **No signal in the mechanical room.** Basements, plant rooms and roof units are where parts get used and where phones give up. PartsLoc never needs a connection to answer.
+- **Subscription inventory tools.** Many inventory tools want an account, a monthly fee and a manager to set them up. PartsLoc is free, with no sign-in and nothing to host.
+- **Phones on per-GB plans.** Nothing in your inventory is uploaded or refreshed in the background. It doesn't spend your data to look up a shelf.
+
+## How it works
+
+1. **Add your parts.** Start with the Parts list. Tap the plus to add a part: name, number, a count, the place it lives. Attach photos from the camera or your gallery, with a note on each one (“the one with the red tag”). Photos are re-saved without location or other hidden details and stay on your phone. (Screenshot: The Parts list: each part with its number, its place and a LOW tag when stock is short. Demo data.)
+2. **Set up your places.** Make a place for every spot you keep things: a building, a room, a truck, a shelf, a bin. Switch the list to **By place** to see what lives where. Use as many levels as you need. (Screenshot: By place view: buildings and storage closets, with a part count on each. Demo data.)
+3. **Put a QR label on the shelf.** Every part and every shelf can show a QR code. Print it, stick it on the bin, and one scan opens exactly that part or place. Scan any barcode you already have; the first time, link it to a part and after that one scan is enough. (Screenshot: A part's own QR code, with the part name and number, ready to print or share. Demo data.)
+4. **Ask: do I have it, and where?** Search by name, number or place, or just scan. You get an answer first: **Yes**, **Probably** or **No**, with the count, the shelf and the reason. Here the count was typed in but never checked, so the app says “Probably” and shows why instead of pretending to be sure. Take and Put back sit right under it. (Screenshot: The answer screen: “Probably, 4 on Shop Crib” with the reasons and Take / Put back buttons. Demo data.)
+5. **Count a bin.** Pick the bin, then walk it: type the real number next to each part. Every count is saved the moment you enter it, so a phone call mid-count loses nothing. Each part remembers when it was last counted and by whom, which is what lets the app tell Yes from Probably. (Screenshot: Count a bin: the parts in one bin with a number box on each. Demo data.)
+6. **Print a label sheet.** From the Parts list, tap the printer icon to make a sheet of labels: 30 part or bin labels per Letter page on the Avery 5160 layout, or larger labels for shelves. The sheet goes to Android's own print dialog, so any printer or print-to-PDF service on your phone works. On A4 paper the dialog may scale the page, and then the labels will not line up with 5160 stickers.
+
+## Features
+
+- **Yes / Probably / No answers:** Every search ends in a verdict with the count, the place and how far to trust it.
+- **QR labels for parts and shelves:** Scan to open. Scan any barcode too, and link it once to a part.
+- **Printable label sheets:** Letter-size sheets laid out for Avery 5160 labels: 30 part or bin labels per sheet, or larger shelf labels. Sent to any printer your phone can print to.
+- **Counting that survives interruptions:** Each count is saved as you type it, with the date and who counted. See when a count has drifted from what was taken out.
+- **Photos of parts:** Several per part, each with a note, from the camera or gallery. Location and other hidden details are removed.
+- **Places in any shape:** Buildings, rooms, trucks, shelves, bins. Move stock between bins and read the ledger of every change.
+- **Take and put back:** One tap to log what you took and what it was for.
+- **Spreadsheets and backups:** Import and export CSV spreadsheets, and make a backup file you can share anywhere. An import shows what would change before it changes anything.
+- **Large text, light and dark:** Follows your phone's text-size setting.
+
+## Privacy and offline
+
+Your parts, counts, places, history and photos are stored on your phone. There is no server that receives them. No account, no ads, no analytics, no tracking code. The camera is used only to scan codes and take part photos. There is no location permission, and photos are re-saved without GPS, date or phone model. Files leave the phone only when you share them, to the place you pick. Code scanning uses Google's ML Kit, which runs on the phone. Full text: [privacy policy](privacy.html.md).
+
+## Questions
+
+**Is it free?**
+Yes. No ads, no subscription and no in-app purchases.
+
+**Does it need internet?**
+No. Everything works with no signal at all: search, scan, count, photos and printing a label (to a printer your phone can reach). The app never uploads your inventory.
+
+**Do I need an account?**
+No. There is no sign-up and no login. You can type your name in Settings so the history shows who counted what.
+
+**Can two phones share an inventory?**
+Not live, and there is no server. In this first version, one phone sends a small file with its changes (through the phone's share menu), the other phone shows what would change, and you apply it. Each movement is applied once, and if two phones disagree it shows you both numbers. Photos do not travel in that file; they stay on the phone that took them.
+
+**Can I get my data out, or back it up?**
+Yes. Export your parts to a CSV spreadsheet, or make a backup file and share it anywhere. If your phone's Android backup is on, Android may also copy your parts and photos to your Google account so they survive a new phone; that copy is made by Android and Google, and you control it in your phone's settings. The app's own settings (your name, theme) are not part of it.
+
+**What phones does it run on?**
+Android only for now. There is no iPhone version.
+
+**When can I get it?**
+It is not on Google Play yet. This page will link to it when it is.
+
+---
+
+# PartsLoc privacy policy
+
+**Effective date: 2026-11-04**
+
+PartsLoc is a parts and inventory app by the PartsLoc developer, GitHub user OdinKral ("we", "us"). It helps you keep
+track of which parts you have and where they are. Questions about this policy:
+odinkral@gmail.com.
+
+**In short:** your parts, counts, places and photos live on your phone. The app has no
+account, no ads and no tracking, and it does not send your inventory to us or to anyone
+else.
+
+## What the app stores, and where
+
+- **On your phone only.** Your parts, places, counts, history and notes are stored in a
+  database on your phone. The name you may type in Settings (it labels who changed what in
+  the history) is stored in the app's settings file. Photos of parts are saved as picture
+  files in the app's private storage. The app does not add encryption of its own; it
+  relies on your phone's lock screen and storage protection.
+- **We do not receive it.** The app has no server of ours built in. We do not run an
+  account system, and we cannot see your data.
+- **Android backup.** If your phone's backup is turned on, Android may copy the parts
+  database and the part photos to your Google account, so your inventory survives a change
+  of phone. That copying is done by Android and Google, not by us, and you control it in
+  your phone's backup settings. The app's settings file (your name and theme) is left out
+  of that backup.
+
+## The camera, and your part photos
+
+The camera is used for two things: scanning QR codes and barcodes (to find a part or a
+shelf), and taking photos of a part. Scanning is done on the phone.
+
+A part can have several photos, each with a note. You can take a photo with the camera or
+choose one from your gallery. Before the app keeps a photo it re-saves it: it is turned
+upright, shrunk to at most 1600 pixels on its long side, and written **without any of the
+information a phone puts in a picture, including location (GPS), date, time and phone
+model**. The camera's temporary copy is deleted once that is done. A picture you chose from
+your gallery is not changed or moved. The app has no location permission at all.
+
+Part photos stay on the phone that took them. They are not uploaded anywhere. They are not
+included in the file you can share to merge two phones' inventories (only each photo's
+note and its place in the part's set are in the app's own backup file), so in this version
+photos do not travel from one phone to another. Deleting a part deletes its photos.
+
+## Labels and printing
+
+The app can make a printable label (a QR code and the part's name or place) and hand it to
+Android's print system. Which printer or print service receives it is your choice. We never
+see the label.
+
+## Advertising and analytics
+
+The app has no ads, no analytics, no crash-reporting service and no tracking code of our
+own, and we do not sell or share your data.
+
+## Google's ML Kit
+
+Scanning codes uses Google's ML Kit library, which does the recognition on the phone. ML
+Kit is Google's software, not ours. Google's documentation says ML Kit may send technical
+information such as device and app details to Google to keep the library working, and that
+is governed by Google's own terms and privacy policy. We cannot see or control it, and we do
+not receive it.
+
+## Optional server
+
+The version of PartsLoc on Google Play has no server settings and does not connect to any
+server for your inventory. (Other builds of the same app that a workplace may give its own
+staff can connect to a server that workplace runs. They are not distributed on Google Play,
+and that server's owner's policy applies to them.)
+
+## Files you share, files you open, and links
+
+- Backups, spreadsheets and the file for merging two phones leave the phone only when you
+  pick a place to send them with the phone's share menu, and only to the place you pick.
+- Files you give the app (a spreadsheet you import, or a file another phone shares to
+  PartsLoc) are read on the phone. The app shows what would change before it changes
+  anything.
+- If you give a part a supplier web address and tap it, your phone opens it in its web
+  browser, and that website's own policy applies.
+- If a part has a **photo web address** (it can come from an imported spreadsheet or
+  backup), the app downloads that picture itself when you open the part. That tells the
+  website your phone's internet address. Do not import spreadsheets whose picture links you
+  do not trust.
+
+## Permissions
+
+The app asks for: **Camera** (scanning codes and taking part photos), **Internet** (only to
+download a picture from a photo web address, as described above, and by Google's ML Kit),
+and **network state** (to know whether the phone is online). It does not ask for your
+location, contacts, microphone, or access to your files and photos in general; picking a
+photo or file goes through Android's own picker, which hands the app only what you choose.
+
+## Deleting your data
+
+Open your phone's Settings, find PartsLoc, and choose Clear storage (or uninstall the app).
+Everything the app kept on the phone is removed. Make a backup first if you want to keep
+it. Copies you already shared, and any Android backup copy of the database and photos made
+by Google, are not removed by this; delete those where they live (your Google account's
+backup settings).
+
+## Children
+
+PartsLoc is a work tool and is not directed at children.
+
+## Changes
+
+If we change this policy we will change the date at the top and publish the new text at
+this same address.
+
+## Contact
+
+odinkral@gmail.com
+
+---
+
+# PartsLoc parts import: the CSV format
+
+<!-- Source of truth: lib/services/csv_import.dart (CsvReader, columnAliases, CsvImport.plan/apply)
+     and lib/screens/csv_import_screen.dart in the PartsLoc source, store build. Read 2026-11-04.
+     The store build has the import (Settings > Data > "Import parts from CSV"). Only the PARTS
+     importer is reachable there: the places/demand/stock importers in lib/services are not wired
+     to any screen in the store build, so this file does not describe them. If csv_import.dart
+     changes, change this file and agents/check_import.py in the same commit. -->
+
+This is exactly what the PartsLoc Android app accepts when someone taps **Settings, Data, Import parts from CSV**. It is useful even without the app: it is a plain parts-list layout any spreadsheet can hold. To check a file before it goes to the phone, run `python3 check_import.py yourfile.csv` (same folder, no installs).
+
+## The short version
+
+- A CSV file (comma separated, `.csv`). UTF-8 is best; Excel's UTF-8 marker is fine; if the file is not UTF-8 the app reads it as Latin-1.
+- First row is the header. Column order does not matter; columns are matched by name.
+- **Every row needs a `name` or a `sku` (part number).** Everything else is optional.
+- Numbers are whole numbers for quantities. Costs may have `$` and commas.
+- The app shows a preview of what will change before anything is written.
+
+## Columns
+
+Header matching ignores case, spaces and punctuation, so `Part #`, `part_number` and `Part Number` are the same.
+
+| Column | Meaning | Notes |
+|---|---|---|
+| `name` | what people call the part | Required unless `sku` is given. If only `sku` is given, the name becomes the sku. |
+| `sku` | part or model number | Required unless `name` is given. |
+| `count` | quantity on hand | Whole number. Blank means 0 for a new part. |
+| `manufacturer` | who makes it | Used with `sku` to recognise a part that is already on the phone. |
+| `category` | free text, e.g. Sensor | |
+| `description` | free text | Notes, sizes, voltage. May hold commas or line breaks if quoted. |
+| `ideal_stock` | the quantity you want to keep | Whole number, optional. |
+| `low_threshold` | at or below this the part shows LOW | Whole number. 0 means never show LOW. |
+| `unit_cost` | cost each | `$1,250.00` is read as 1250. |
+| `supplier` | where it is bought | free text |
+| `supplier_url` | supplier web page | free text; opens in the phone's browser when tapped |
+| `default_location` | where it lives, as text | see Places below |
+| `trade` | HVAC, Electrical, etc. | free text; kept on parts that already exist, not on brand-new ones |
+| `photo_url` | web address of a picture | Leave blank. The app downloads that address itself when the part is opened. |
+| `id` | the app's own part id | Leave blank for new parts. A matching id updates that part. |
+| `lifecycle_status`, `last_updated` | exist in the app's own export | accepted, but not applied on import |
+
+**Aliases** (a header the app also understands):
+- sku: `part number`, `part no`, `part`, `part id`, `model number`, `model`, `item number`
+- name: `part name`, `item name`, `item`, `title`
+- count: `qty`, `quantity`, `on hand`, `stock`, `in stock`
+- unit_cost: `cost`, `price`, `unit price`, `each cost`
+- supplier: `vendor`, `vendor name`, `supplier name`
+- manufacturer: `mfg`, `mfr`, `make`, `brand`
+- category: `type`, `group`
+- description: `notes`, `desc`
+- low_threshold: `reorder point`, `reorder at`, `min qty`, `min`
+- ideal_stock: `max qty`, `target`
+- default_location: `location`, `bin`, `shelf`
+- trade: `discipline`, `trade type`
+
+A column the app does not recognise is left out and reported in the preview, never guessed into a field. If two columns mean the same field, the later one wins.
+
+## Places
+
+The import does **not** create shelves, bins or rooms. `default_location` (or `location`, `bin`, `shelf`) is stored as plain text on the part, as a note of where it lives, for example `Truck 2, left drawer`. Shelves and bins that carry QR labels and per-shelf counts are made in the app afterwards (Parts, By place). So a good import file keeps one consistent text label per place, which makes the later setup quick.
+
+## What happens to each row
+
+- **New part** (nothing on the phone matches): created with the given count (0 if blank).
+- **Existing part**: a row matches an existing part by `id`, then by `manufacturer` plus `sku`, then by `name` (case does not matter). Matching rows update the part's other fields.
+- **A different count for an existing part**: the app asks, and shows both numbers, unless you choose "the file wins" for a count you just took. The default is to ask. The file never silently overwrites a count.
+- **Blank cells on an existing part**: a blank number keeps the stored number, but a blank text cell blanks that text. To leave a field alone on a re-import, delete the column instead of leaving it empty.
+- **Duplicates inside one file** are not detected. Two rows for the same part in the same file make two parts. Merge them before importing.
+- **A row with no name and no sku** is skipped and listed as an error.
+- **A number that cannot be read** (for example `count` of `a few`) is a warning, and 0 is used.
+- **Numbers are read by dropping every character except digits and a minus sign.** So `12 pcs` is 12, `1,250` is 1250, but `1.5` becomes 15 and `5-6` fails. Write whole numbers.
+- **Extra cells** beyond the header are ignored. An unquoted comma inside a name causes this: quote any cell that contains a comma, as `"Belt, A42"`.
+- Blank lines are skipped. Quoted cells may contain commas, line breaks and doubled quotes (`""`).
+- Photos are not imported (a CSV cannot hold them). Add photos in the app.
+
+## Minimal valid file
+
+```csv
+name,count
+Damper actuator,4
+```
+
+## A fuller example (invented demo data)
+
+```csv
+name,sku,manufacturer,category,count,low_threshold,ideal_stock,unit_cost,supplier,default_location,description
+"Damper actuator, 24 V spring return",LMB24-3-T,Belimo,Actuator,4,2,6,$212.50,Demo Supply Co,Shop crib shelf B3,"Fits 3/4 in shaft, 24 V"
+Current switch sensor,H977,Veris,Sensor,2,2,4,$38.00,Demo Supply Co,Shop crib shelf B3,Solid core
+Belt A42,A42,,Belts,12,4,12,$9.75,Demo Supply Co,Truck 2 left drawer,
+Filter 20x25x2,,,Filters,30,10,40,$6.20,Demo Filters Inc,Basement storage rack 1,MERV 8
+```
+
+The header may be renamed to the aliases above, for example `Part #,Qty,Bin` instead of `sku,count,default_location`.
+
+---
+
+# Parts crib setup helper
+
+A paste-ready instruction set for any AI assistant (Claude, ChatGPT, Gemini, a local model). Paste everything under "Paste from here" into a new chat, then say "let's start". It helps a tradesperson get a parts crib, shop or truck organised on paper first, and turns what they already have into a spreadsheet file. The file format is the one the free Android app PartsLoc imports (see `import-format.md`), but the plan and the spreadsheet are useful on their own.
+
+For the assistant, if you were handed this page by a user: follow the block below. If you can run code, `check_import.py` in this folder validates the CSV you produce; run `python3 check_import.py parts.csv` and fix what it reports before handing the file over.
+
+---
+
+## Paste from here
+
+You are a practical helper for a maintenance tech, shop or crib keeper, or small trades business who wants to know what parts they have and where they are. Speak plainly, like a coworker. No hype, no jargon, short answers. One question at a time unless the person is clearly happy to answer several.
+
+### Your job, in order
+
+1. **Interview them about places.** Ask where parts live: trucks, the shop, a crib, rooms, closets, shelves, bins, drawers. Ask how they already refer to each one ("the blue cabinet", "Truck 2"). Keep THEIR names. Build a short list of places, each with a single consistent label such as `Shop crib shelf B3` or `Truck 2 left drawer`. Read the list back and ask what is missing.
+2. **Turn what they have into a CSV.** They may give you a typed list, a pasted spreadsheet, or a photo of a handwritten list. Produce one row per part with these columns, in this order:
+   `name,sku,manufacturer,category,count,low_threshold,default_location,description`
+   - Every row needs a `name` or a `sku` (part number). Everything else may be blank.
+   - `count` is a whole number. If it is not legible or not given, leave it blank. Never guess a quantity.
+   - `default_location` uses the place labels from step 1, spelled the same way every time.
+   - `low_threshold`: only fill it if they told you a reorder level. Blank is fine.
+   - Put anything else (size, voltage, notes) in `description`.
+   - Quote any cell that contains a comma, like `"Belt, A42"`.
+   - Merge duplicate parts into one row before you finish: the app does not merge rows inside one file.
+   - Leave `photo_url` and `id` out entirely.
+3. **Say what you were unsure of.** After the CSV, list every row where you guessed or could not read something (a smudged number, a part name that could be two things), so the person can fix those first. A handwritten photo will always have some. Do not hide them.
+4. **Suggest a labelling plan.** Keep it small. Print labels for the 10 to 20 parts they reach for most, plus one label per shelf or bin, before anything else. Shelf and bin labels first, because one label on a shelf makes every part on it findable; then the fast-moving parts. Suggest putting the label where a hand lands, not where it looks tidy. Suggest a simple scheme: area, shelf letter, bin number (for example `Shop-B3`).
+5. **Tell them where their data goes.** The CSV is theirs. PartsLoc (a free Android app, works offline, no account, no ads) can import it: Settings, Data, Import parts from CSV; it shows a preview before changing anything. In the app they then set up the shelves and bins that get QR labels, and count. The import does not create shelves; it keeps the location text on each part. If they do not use PartsLoc, the same file works in any spreadsheet.
+6. **Remind them about privacy.** In PartsLoc, parts, counts and photos stay on the phone; nothing is uploaded. If they paste their inventory into a chat with you, tell them that part goes to whatever service they are chatting with, and that they can leave out costs, supplier names or anything private and add it later.
+
+### Rules
+
+- Do not invent parts, numbers, part numbers or places. Blank is better than wrong.
+- Do not claim features the app does not have. It runs on Android only. It does not sync live between phones and has no web version.
+- Do not push the app. Mention PartsLoc where the file goes and when they ask what to do next; otherwise just help.
+- If a number reads as a decimal (1.5), ask. The import reads whole numbers only.
+- Finish by giving: the places list, the CSV in one code block, the "unsure" list, and the labelling plan.
+
+### Reference (what the importer accepts)
+
+- Comma-separated, first row is the header, columns matched by name in any order. Recognised: `name, sku, manufacturer, category, description, count, ideal_stock, low_threshold, unit_cost, supplier, supplier_url, default_location, trade`. Also understood: `Part #`, `Qty`, `Bin`, `Location`, `Vendor`, `Cost`, `Min`.
+- A row needs a name or a sku. A row with neither is skipped.
+- Counts are whole numbers; `1.5` would be misread as 15; text like `a few` becomes 0 with a warning.
+- Unknown columns are ignored and reported. Full rules: `import-format.md`.
+
+## End of paste
+
+---
+
+## Notes for the person who put this here
+
+- Nothing in this file calls out to the internet or needs the app. It is a prompt.
+- The app side: PartsLoc is on the product page of this site. It is free and Android only. As of 2026-11-04 it is not on Google Play yet; the product page says when that changes.

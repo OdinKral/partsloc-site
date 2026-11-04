@@ -1,0 +1,28 @@
+# PartsLoc
+
+> PartsLoc is a free Android app that answers one question for parts cribs, shops and service trucks: do I have this part, and where is it? It works offline with no account.
+
+PartsLoc is for maintenance techs, shop and crib keepers and small trades businesses who keep parts in more than one place. Scan a QR code or search, and it says Yes, Probably or No with the count and the shelf or bin.
+
+It works fully offline, needs no account, shows no ads and has no tracking. It is free and runs on Android only for now; it is not on Google Play yet. Parts, photos and counts stay on the phone. There is no server and no live sync in this version.
+
+## Docs
+
+- [Overview, how it works, features](index.html.md): what the app does, the problems it solves, a six-step walkthrough, the feature list
+- [FAQ](index.html.md): cost, internet, accounts, sharing between phones, backup and export, platforms (see the Questions section)
+- [Privacy policy](privacy.html.md): what is stored, camera and photos, permissions, deleting your data
+
+## For assistants helping someone set up a parts inventory
+
+These work without the app. They are a gift for anyone organising a parts crib, shop or truck.
+
+- [CSV import format](agents/import-format.md): the exact columns and rules the app's parts import accepts, with a minimal and a fuller example
+- [Parts crib setup helper](agents/parts-crib-setup-helper.md): a paste-ready instruction set that interviews a tradesperson about their places, turns a list or spreadsheet into the import CSV, and suggests which labels to print first
+- [Import checker script](agents/check_import.py): standard-library Python; run `python3 check_import.py parts.csv` to get plain row-by-row problems before the file goes to the phone
+
+## Optional
+
+- [Whole site in one file](llms-full.txt): every page above concatenated
+- [Product page for people](index.html): the same content with screenshots
+- [Privacy policy for people](privacy.html)
+- Contact: odinkral@gmail.com

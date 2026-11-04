@@ -1,15 +1,104 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PartsLoc</title>
-<style>
-body{font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;max-width:40rem;margin:0 auto;padding:1.2rem;color:#1b1b1b;background:#fff}
-a{color:#0b5cad}
-@media (prefers-color-scheme:dark){body{background:#14171c;color:#e8e8e8}a{color:#7db7ff}}
-</style></head><body>
-<h1>PartsLoc</h1>
-<p>PartsLoc is an Android app for keeping track of parts and where they are: scan a code, see
-whether you have the part, how many, and which shelf or bin it is in. It works offline, needs
-no account, has no ads and does not track you. Your inventory stays on your phone.</p>
-<p><a href="privacy.html">Privacy policy</a></p>
+<title>PartsLoc: do I have this part, and where is it?</title>
+<meta name="description" content="PartsLoc is a free Android app for parts cribs, shops and service trucks. Scan a QR code, see Yes, Probably or No and the shelf. Works offline, no account, no ads.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" type="image/svg+xml" href="img/icon.svg">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="#top"><img src="img/icon.svg" width="36" height="36" alt="">PartsLoc</a>
+<nav aria-label="Main"><ul><li><a href="#problems">Why</a></li><li><a href="#how">How it works</a></li><li><a href="#features">Features</a></li><li><a href="#privacy">Privacy</a></li><li><a href="#faq">FAQ</a></li><li><a href="#ai">For AI assistants</a></li></ul></nav>
+</div></header>
+<main id="main">
+<div class="hero" id="top"><div class="wrap">
+<div>
+<img class="icon" src="img/icon.svg" width="96" height="96" alt="PartsLoc app icon: a teal shelf with boxes and an amber location pin">
+<h1>Do I have this part, and where is it?</h1>
+<p class="lead">PartsLoc answers that in a few seconds, on your phone, even in a basement with no signal. Scan a shelf label or search, and see Yes, Probably or No, with the count and the place.</p>
+<div class="soon" role="status"><span>Coming soon to Google Play<small>Android. Free. Not live yet.</small></span></div>
+<ul class="strip"><li>Works offline</li><li>No account</li><li>No ads</li><li>No tracking</li></ul>
+</div>
+<div class="shots"><img src="img/02-answer-screen.webp" width="480" height="960" alt="PartsLoc answer screen showing Probably, 4 on Shop Crib, with the reasons"><img src="img/01-parts-list.webp" width="480" height="960" alt="PartsLoc parts list with part numbers, places and a LOW stock tag"></div>
+</div></div>
+
+<section id="problems"><div class="wrap">
+<h2>The problems it is for</h2>
+<p class="sub">Made for maintenance techs, shop and crib keepers, and small trades businesses: anyone who keeps parts in more than one place and has to remember where.</p>
+<div class="grid pain"><div class="card"><h3>&ldquo;We have one somewhere.&rdquo;</h3><p>Somewhere is not a place. PartsLoc ties every part to a shelf, bin, room or truck, so the answer comes with an address.</p></div>
+<div class="card"><h3>Parts scattered everywhere</h3><p>Trucks, shelves, closets, a cabinet in the boiler room. Keep one list across all of them instead of one in everybody's head.</p></div>
+<div class="card"><h3>Buying it twice</h3><p>Ordering a part you already own costs real money. Check first, in your pocket, before the order goes in.</p></div>
+<div class="card"><h3>Wasted walks</h3><p>Three floors down to find the bin empty. The answer says how many, where, and how recently someone counted.</p></div>
+<div class="card"><h3>No signal in the mechanical room</h3><p>Basements, plant rooms and roof units are where parts get used and where phones give up. PartsLoc never needs a connection to answer.</p></div>
+<div class="card"><h3>Subscription inventory tools</h3><p>Many inventory tools want an account, a monthly fee and a manager to set them up. PartsLoc is free, with no sign-in and nothing to host.</p></div>
+<div class="card"><h3>Phones on per-GB plans</h3><p>Nothing in your inventory is uploaded or refreshed in the background. It doesn't spend your data to look up a shelf.</p></div></div>
+</div></section>
+
+<section id="how" class="alt"><div class="wrap">
+<h2>How it works</h2>
+<p class="sub">Six steps from an empty phone to a labelled shelf. The screenshots use made-up demo parts.</p>
+<div class="steps">
+<div class="step"><figure><img src="img/01-parts-list.webp" width="480" height="960" loading="lazy" alt="The Parts list: each part with its number, its place and a LOW tag when stock is short. Demo data."><figcaption>The Parts list: each part with its number, its place and a LOW tag when stock is short. Demo data.</figcaption></figure>
+<div><h3><span class="n">1</span>Add your parts</h3><p>Start with the Parts list. Tap the plus to add a part: name, number, a count, the place it lives. Attach photos from the camera or your gallery, with a note on each one (&ldquo;the one with the red tag&rdquo;). Photos are re-saved without location or other hidden details and stay on your phone.</p></div></div>
+<div class="step"><figure><img src="img/04-by-place.webp" width="480" height="960" loading="lazy" alt="By place view: buildings and storage closets, with a part count on each. Demo data."><figcaption>By place view: buildings and storage closets, with a part count on each. Demo data.</figcaption></figure>
+<div><h3><span class="n">2</span>Set up your places</h3><p>Make a place for every spot you keep things: a building, a room, a truck, a shelf, a bin. Switch the list to <strong>By place</strong> to see what lives where. Use as many levels as you need.</p></div></div>
+<div class="step"><figure><img src="img/03-part-qr-code.webp" width="480" height="960" loading="lazy" alt="A part's own QR code, with the part name and number, ready to print or share. Demo data."><figcaption>A part's own QR code, with the part name and number, ready to print or share. Demo data.</figcaption></figure>
+<div><h3><span class="n">3</span>Put a QR label on the shelf</h3><p>Every part and every shelf can show a QR code. Print it, stick it on the bin, and one scan opens exactly that part or place. Scan any barcode you already have; the first time, link it to a part and after that one scan is enough.</p></div></div>
+<div class="step"><figure><img src="img/02-answer-screen.webp" width="480" height="960" loading="lazy" alt="The answer screen: &ldquo;Probably, 4 on Shop Crib&rdquo; with the reasons and Take / Put back buttons. Demo data."><figcaption>The answer screen: &ldquo;Probably, 4 on Shop Crib&rdquo; with the reasons and Take / Put back buttons. Demo data.</figcaption></figure>
+<div><h3><span class="n">4</span>Ask: do I have it, and where?</h3><p>Search by name, number or place, or just scan. You get an answer first: <strong>Yes</strong>, <strong>Probably</strong> or <strong>No</strong>, with the count, the shelf and the reason. Here the count was typed in but never checked, so the app says &ldquo;Probably&rdquo; and shows why instead of pretending to be sure. Take and Put back sit right under it.</p></div></div>
+<div class="step"><figure><img src="img/05-count-a-bin.webp" width="480" height="960" loading="lazy" alt="Count a bin: the parts in one bin with a number box on each. Demo data."><figcaption>Count a bin: the parts in one bin with a number box on each. Demo data.</figcaption></figure>
+<div><h3><span class="n">5</span>Count a bin</h3><p>Pick the bin, then walk it: type the real number next to each part. Every count is saved the moment you enter it, so a phone call mid-count loses nothing. Each part remembers when it was last counted and by whom, which is what lets the app tell Yes from Probably.</p></div></div>
+<div class="step noshot"><div><h3><span class="n">6</span>Print a label sheet</h3><p>From the Parts list, tap the printer icon to make a sheet of labels: 30 part or bin labels per Letter page on the Avery 5160 layout, or larger labels for shelves. The sheet goes to Android's own print dialog, so any printer or print-to-PDF service on your phone works. On A4 paper the dialog may scale the page, and then the labels will not line up with 5160 stickers.</p></div></div>
+</div>
+</div></section>
+
+<section id="features"><div class="wrap">
+<h2>What is in it</h2>
+<p class="sub">A small tool that does the parts question well, without a manual.</p>
+<div class="grid"><div class="card"><h3>Yes / Probably / No answers</h3><p>Every search ends in a verdict with the count, the place and how far to trust it.</p></div>
+<div class="card"><h3>QR labels for parts and shelves</h3><p>Scan to open. Scan any barcode too, and link it once to a part.</p></div>
+<div class="card"><h3>Printable label sheets</h3><p>Letter-size sheets laid out for Avery 5160 labels: 30 part or bin labels per sheet, or larger shelf labels. Sent to any printer your phone can print to.</p></div>
+<div class="card"><h3>Counting that survives interruptions</h3><p>Each count is saved as you type it, with the date and who counted. See when a count has drifted from what was taken out.</p></div>
+<div class="card"><h3>Photos of parts</h3><p>Several per part, each with a note, from the camera or gallery. Location and other hidden details are removed.</p></div>
+<div class="card"><h3>Places in any shape</h3><p>Buildings, rooms, trucks, shelves, bins. Move stock between bins and read the ledger of every change.</p></div>
+<div class="card"><h3>Take and put back</h3><p>One tap to log what you took and what it was for.</p></div>
+<div class="card"><h3>Spreadsheets and backups</h3><p>Import and export CSV spreadsheets, and make a backup file you can share anywhere. An import shows what would change before it changes anything.</p></div>
+<div class="card"><h3>Large text, light and dark</h3><p>Follows your phone's text-size setting.</p></div></div>
+</div></section>
+
+<section id="privacy" class="alt"><div class="wrap two">
+<div><h2>Private and offline by design</h2>
+<p>Your parts, counts, places, history and photos are stored on your phone. We run no server that receives them and we cannot see them.</p>
+<p><a href="privacy.html">Read the full privacy policy</a></p></div>
+<ul class="tick">
+<li>No account, no ads, no analytics, no tracking code.</li>
+<li>The camera is used only to scan codes and take part photos.</li>
+<li>No location permission at all. Photos are re-saved without GPS, date or phone model.</li>
+<li>Files leave the phone only when you share them, to the place you pick.</li>
+<li>Code scanning uses Google's ML Kit, which runs on the phone; the policy explains what Google may do with it.</li>
+</ul></div></section>
+
+<section id="faq"><div class="wrap">
+<h2>Questions</h2>
+<details><summary>Is it free?</summary><p>Yes. No ads, no subscription and no in-app purchases.</p></details>
+<details><summary>Does it need internet?</summary><p>No. Everything works with no signal at all: search, scan, count, photos and printing a label (to a printer your phone can reach). The app never uploads your inventory.</p></details>
+<details><summary>Do I need an account?</summary><p>No. There is no sign-up and no login. You can type your name in Settings so the history shows who counted what.</p></details>
+<details><summary>Can two phones share an inventory?</summary><p>Not live, and there is no server. In this first version, one phone sends a small file with its changes (through the phone's share menu), the other phone shows what would change, and you apply it. Each movement is applied once, and if two phones disagree it shows you both numbers. Photos do not travel in that file; they stay on the phone that took them.</p></details>
+<details><summary>Can I get my data out, or back it up?</summary><p>Yes. Export your parts to a CSV spreadsheet, or make a backup file and share it anywhere. If your phone's Android backup is on, Android may also copy your parts and photos to your Google account so they survive a new phone; that copy is made by Android and Google, and you control it in your phone's settings. The app's own settings (your name, theme) are not part of it.</p></details>
+<details><summary>What phones does it run on?</summary><p>Android only for now. There is no iPhone version.</p></details>
+<details><summary>When can I get it?</summary><p>It is not on Google Play yet. This page will link to it when it is.</p></details>
+</div></section>
+
+<section id="ai" class="alt"><div class="wrap">
+<h2>For AI assistants</h2>
+<p class="sub">Plain-text versions of this site for assistants and search tools: <a href="llms.txt">llms.txt</a> is the short index, <a href="llms-full.txt">llms-full.txt</a> is everything in one file, and each page has a Markdown twin (<a href="index.html.md">index.html.md</a>, <a href="privacy.html.md">privacy.html.md</a>). It follows the llms.txt convention (llmstxt.org).</p>
+<p class="sub">If you are helping someone set up a parts inventory, there is something here that works without the app: <a href="agents/import-format.md">the CSV import format</a>, a <a href="agents/parts-crib-setup-helper.md">paste-ready crib setup helper</a>, and a <a href="agents/check_import.py">small checker script</a> (Python, no installs).</p>
+</div></section>
+</main>
+<footer><div class="wrap">
+<div><strong>PartsLoc</strong><br>Made by a technician, for technicians.</div>
+<div>Contact: <a href="mailto:odinkral@gmail.com">odinkral@gmail.com</a><br><a href="privacy.html">Privacy policy</a><br><a href="llms.txt">llms.txt</a> (for AI assistants)</div>
+</div></footer>
 </body></html>

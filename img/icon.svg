@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<!-- Candidate A: a two-level shelf with boxes and a location pin. Teal ground, white shapes; the pin is the only warm colour so it reads at 48 px. -->
+<rect width="512" height="512" fill="#0F6E6E"/>
+<rect x="76" y="250" width="360" height="26" rx="6" fill="#FFFFFF"/>
+<rect x="76" y="400" width="360" height="26" rx="6" fill="#FFFFFF"/>
+<rect x="100" y="320" width="90" height="80" rx="8" fill="#BFE6E6"/>
+<rect x="206" y="340" width="70" height="60" rx="8" fill="#BFE6E6"/>
+<rect x="100" y="170" width="70" height="80" rx="8" fill="#BFE6E6"/>
+<path d="M356 70c-46 0-82 35-82 80 0 58 82 140 82 140s82-82 82-140c0-45-36-80-82-80z" fill="#FFB020"/>
+<circle cx="356" cy="150" r="28" fill="#0F6E6E"/>
+</svg>
