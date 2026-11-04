@@ -19,6 +19,7 @@ These work without the app. They are a gift for anyone organising a parts crib, 
 - [CSV import format](agents/import-format.md): the exact columns and rules the app's parts import accepts, with a minimal and a fuller example
 - [Parts crib setup helper](agents/parts-crib-setup-helper.md): a paste-ready instruction set that interviews a tradesperson about their places, turns a list or spreadsheet into the import CSV, and suggests which labels to print first
 - [Import checker script](agents/check_import.py): standard-library Python; run `python3 check_import.py parts.csv` to get plain row-by-row problems before the file goes to the phone
+- [PartsLoc helper for assistants](agents/partsloc-mcp-helper.md): a local, read-only, no-network MCP server over a backup copied from the phone: Yes / Probably / No answers, where is it, what is low, label sheets, import files. [Install guide](agents/partsloc-mcp/INSTALL.md) written for an assistant to follow with the person
 
 ## Optional
 

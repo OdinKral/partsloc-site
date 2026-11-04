@@ -1,0 +1,5 @@
+# The only required package. FastMCP (mcp.server.fastmcp) arrived in mcp 1.2; tested here on 1.27.1.
+mcp>=1.2
+# Optional: draws the QR codes on label sheets. Without it labels_for still works but says, loudly,
+# that the sheet has no codes. Pure Python, no dependencies of its own.
+# segno>=1.5
