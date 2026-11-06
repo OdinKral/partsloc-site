@@ -168,6 +168,18 @@ information such as device and app details to Google to keep the library working
 is governed by Google's own terms and privacy policy. We cannot see or control it, and we do
 not receive it.
 
+## What we know, what we don't, and what we're doing about it
+
+We would rather tell you what we are unsure of than promise more than we can prove.
+
+**What we measured (2026-11-05).** On a test phone (an Android emulator) running the release build, Google's ML Kit recorded diagnostic events while the Scan screen was open and uploaded them to Google (`firebaselogging.googleapis.com`). Opening the app, typing a name and adding a part sent nothing.
+
+**What we cannot know.** The upload is encrypted, so we could not read its contents. What it contains comes from Google's own list (linked above), not from our measurement. We have not yet tested the text reader screen, a copy installed from Google Play, or a real phone. Google documents no way for an app to switch this reporting off.
+
+**What we're doing.** We are testing a Play version of PartsLoc without Android's internet permission. That version should not need the internet, and without the permission Android blocks the upload. If it works and we re-measure it, this page will say so, and you will be able to check it yourself in the app's permission list.
+
+**Check it yourself.** With a phone connected to a computer, `adb logcat | grep -i firebaselogging` shows whether an upload happens while you scan. We are preparing to publish PartsLoc's source code under the GPL-3.0 licence, so anyone can read exactly what the app does instead of taking our word for it.
+
 ## Optional server
 
 The version of PartsLoc on Google Play has no server settings and does not connect to any
