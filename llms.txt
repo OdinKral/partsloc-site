@@ -28,4 +28,4 @@ If you like this project, please support it: ☕ [ko-fi.com/vanilabs](https://ko
 - [Whole site in one file](llms-full.txt): every page above concatenated
 - [Product page for people](index.html): the same content with screenshots
 - [Privacy policy for people](privacy.html)
-- Contact: odinkral@gmail.com
+- Contact: steve.r19412011@gmail.com

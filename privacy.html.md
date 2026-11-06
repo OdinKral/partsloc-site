@@ -4,7 +4,7 @@
 
 PartsLoc is a parts and inventory app by the PartsLoc developer, GitHub user OdinKral ("we", "us"). It helps you keep
 track of which parts you have and where they are. Questions about this policy:
-odinkral@gmail.com.
+steve.r19412011@gmail.com.
 
 **In short:** your parts, counts, places and photos live on your phone. The app has no
 account, no ads and no tracking code of our own, and it does not send your inventory to us or to anyone
@@ -121,4 +121,4 @@ this same address.
 
 ## Contact
 
-odinkral@gmail.com
+steve.r19412011@gmail.com

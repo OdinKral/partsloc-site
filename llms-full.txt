@@ -28,7 +28,7 @@ If you like this project, please support it: ☕ [ko-fi.com/vanilabs](https://ko
 - [Whole site in one file](llms-full.txt): every page above concatenated
 - [Product page for people](index.html): the same content with screenshots
 - [Privacy policy for people](privacy.html)
-- Contact: odinkral@gmail.com
+- Contact: steve.r19412011@gmail.com
 
 ---
 
@@ -38,7 +38,7 @@ If you like this project, please support it: ☕ [ko-fi.com/vanilabs](https://ko
 
 PartsLoc keeps your parts, places (shelves, bins, rooms, trucks) and counts on your phone. Scan a QR code or barcode, or search by name, and it answers Yes, Probably or No, with the count, the place and how far to trust the count. It is made by a technician, for technicians: maintenance techs, shop and crib keepers, and small trades businesses.
 
-Status: not on Google Play yet ("Coming soon to Google Play"). Android only for now. Free, with no ads, no subscription and no in-app purchases. Works offline, needs no account, has no ads and no tracking code of our own (Google's ML Kit scanner sends Google anonymous technical diagnostics while in use; see the privacy page). Contact: odinkral@gmail.com.
+Status: not on Google Play yet ("Coming soon to Google Play"). Android only for now. Free, with no ads, no subscription and no in-app purchases. Works offline, needs no account, has no ads and no tracking code of our own (Google's ML Kit scanner sends Google anonymous technical diagnostics while in use; see the privacy page). Contact: steve.r19412011@gmail.com.
 
 ## The problems it is for
 
@@ -111,7 +111,7 @@ If you like this project, please support it: ☕ [ko-fi.com/vanilabs](https://ko
 
 PartsLoc is a parts and inventory app by the PartsLoc developer, GitHub user OdinKral ("we", "us"). It helps you keep
 track of which parts you have and where they are. Questions about this policy:
-odinkral@gmail.com.
+steve.r19412011@gmail.com.
 
 **In short:** your parts, counts, places and photos live on your phone. The app has no
 account, no ads and no tracking code of our own, and it does not send your inventory to us or to anyone
@@ -228,7 +228,7 @@ this same address.
 
 ## Contact
 
-odinkral@gmail.com
+steve.r19412011@gmail.com
 
 ---
 
