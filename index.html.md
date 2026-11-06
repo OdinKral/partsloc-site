@@ -4,7 +4,7 @@
 
 PartsLoc keeps your parts, places (shelves, bins, rooms, trucks) and counts on your phone. Scan a QR code or barcode, or search by name, and it answers Yes, Probably or No, with the count, the place and how far to trust the count. It is made by a technician, for technicians: maintenance techs, shop and crib keepers, and small trades businesses.
 
-Status: not on Google Play yet ("Coming soon to Google Play"). Android only for now. Free, with no ads, no subscription and no in-app purchases. Works offline, needs no account, has no ads and no tracking code of our own (ML Kit's own reporting is being audited). Contact: odinkral@gmail.com.
+Status: not on Google Play yet ("Coming soon to Google Play"). Android only for now. Free, with no ads, no subscription and no in-app purchases. Works offline, needs no account, has no ads and no tracking code of our own (Google's ML Kit scanner sends Google anonymous technical diagnostics while in use; see the privacy page). Contact: odinkral@gmail.com.
 
 ## The problems it is for
 

@@ -51,7 +51,7 @@ see the label.
 ## Advertising and analytics
 
 The app has no ads, no analytics, no crash-reporting service and no tracking code of our
-own, and we do not sell or share your data. Code scanning uses Google's ML Kit, which reads codes on the phone; we are checking exactly what ML Kit itself reports to Google and will say so here once measured.
+own, and we do not sell or share your data. The code scanner and text reader are Google's ML Kit, which runs on the phone but, while the scanner is in use, sends Google anonymous technical diagnostics: device model, Android version, app name and version, an install identifier, and timing and error counts. Google says this does not include your inventory, photos or scanned codes (we measured the upload on 2026-11-05; Google's list: https://developers.google.com/ml-kit/android-data-disclosure).
 
 ## Google's ML Kit
 
