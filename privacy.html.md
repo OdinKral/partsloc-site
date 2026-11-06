@@ -7,7 +7,7 @@ track of which parts you have and where they are. Questions about this policy:
 odinkral@gmail.com.
 
 **In short:** your parts, counts, places and photos live on your phone. The app has no
-account, no ads and no tracking, and it does not send your inventory to us or to anyone
+account, no ads and no tracking code of our own, and it does not send your inventory to us or to anyone
 else.
 
 ## What the app stores, and where
@@ -51,7 +51,7 @@ see the label.
 ## Advertising and analytics
 
 The app has no ads, no analytics, no crash-reporting service and no tracking code of our
-own, and we do not sell or share your data.
+own, and we do not sell or share your data. Code scanning uses Google's ML Kit, which reads codes on the phone; we are checking exactly what ML Kit itself reports to Google and will say so here once measured.
 
 ## Google's ML Kit
 

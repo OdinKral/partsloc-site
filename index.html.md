@@ -4,7 +4,7 @@
 
 PartsLoc keeps your parts, places (shelves, bins, rooms, trucks) and counts on your phone. Scan a QR code or barcode, or search by name, and it answers Yes, Probably or No, with the count, the place and how far to trust the count. It is made by a technician, for technicians: maintenance techs, shop and crib keepers, and small trades businesses.
 
-Status: not on Google Play yet ("Coming soon to Google Play"). Android only for now. Free, with no ads, no subscription and no in-app purchases. Works offline, needs no account, has no ads and no tracking. Contact: odinkral@gmail.com.
+Status: not on Google Play yet ("Coming soon to Google Play"). Android only for now. Free, with no ads, no subscription and no in-app purchases. Works offline, needs no account, has no ads and no tracking code of our own (ML Kit's own reporting is being audited). Contact: odinkral@gmail.com.
 
 ## The problems it is for
 
@@ -39,7 +39,7 @@ Status: not on Google Play yet ("Coming soon to Google Play"). Android only for 
 
 ## Privacy and offline
 
-Your parts, counts, places, history and photos are stored on your phone. There is no server that receives them. No account, no ads, no analytics, no tracking code. The camera is used only to scan codes and take part photos. There is no location permission, and photos are re-saved without GPS, date or phone model. Files leave the phone only when you share them, to the place you pick. Code scanning uses Google's ML Kit, which runs on the phone. Full text: [privacy policy](privacy.html.md).
+Your parts, counts, places, history and photos are stored on your phone. There is no server that receives them. No account, no ads, and no analytics or tracking code of our own. Your data, your call: export or share your inventory with any app or assistant you choose. We make that easy, and your inventory goes only where you send it. The camera is used only to scan codes and take part photos. There is no location permission, and photos are re-saved without GPS, date or phone model. Files leave the phone only when you share them, to the place you pick. Code scanning uses Google's ML Kit, which runs on the phone. Full text: [privacy policy](privacy.html.md).
 
 ## Questions
 

@@ -4,7 +4,7 @@
 
 PartsLoc is for maintenance techs, shop and crib keepers and small trades businesses who keep parts in more than one place. Scan a QR code or search, and it says Yes, Probably or No with the count and the shelf or bin.
 
-It works fully offline, needs no account, shows no ads and has no tracking. It is free and runs on Android only for now; it is not on Google Play yet. Parts, photos and counts stay on the phone. There is no server and no live sync in this version.
+It works fully offline, needs no account, shows no ads and has no tracking code of our own (ML Kit's own reporting is being audited). It is free and runs on Android only for now; it is not on Google Play yet. Parts, photos and counts stay on the phone. There is no server and no live sync in this version.
 
 ## Docs
 
